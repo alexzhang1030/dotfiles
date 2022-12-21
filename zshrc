@@ -177,8 +177,8 @@ function tencent() {
 
 
 # MY CUSTOM CODE
-alias proxy='unset all_proxy && unset https_proxy && unset http_proxy'
-alias unproxy="export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890"
+alias unproxy='unset all_proxy && unset https_proxy && unset http_proxy'
+alias proxy="export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890"
 export PATH=$PATH:/Users/alex/.spicetify
 alias rustl='rustlings'
 alias tmux-session='~/Desktop/shell-scripts/tmux-session'

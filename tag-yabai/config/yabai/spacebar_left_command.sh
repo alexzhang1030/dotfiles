@@ -1,6 +1,6 @@
 #!/bin/bash
 
-shurufa() {
+input_type() {
   curPath=$(cd `dirname $0`; pwd)
   layout=$(${curPath}/get_current_shurufa)
   if [[ $layout == *"ABC"* ]];then
@@ -10,14 +10,13 @@ shurufa() {
   fi
 }
 
-emoji() {
-  echo " 🤦🏼💆🏻🙆🏼"
+me() {
+  echo "Alex"
 }
 
-
 arr=(
-"`emoji`"
-#"`shurufa`"
+"`input_type`"
+"`me`"
 )
 
 res=""

@@ -56,7 +56,7 @@ yabai -m config window_gap                   1
 # 动画
 #yabai -m config window_animation_duration    0.30
 
-otherApp='^(IINA|Finder|Calendar|日历|System Preferences|System Settings|系统偏好设置|Mail|微信|WeChat|QQ|网易云音乐|NetEaseMusic|Alfred Preferences|Tencent Lemon|企业微信|WeCom|Spotify|预览|Karabiner-Elements|aDrive)$'
+otherApp='^(IINA|Finder|Calendar|日历|System Preferences|System Settings|系统偏好设置|Mail|微信|WeChat|QQ|网易云音乐|NetEaseMusic|Alfred Preferences|Tencent Lemon|企业微信|WeCom|Spotify|预览|Karabiner-Elements|aDrive|Books|Telegram|Discord|Preview|迅雷)$'
 yabai -m rule --add app="${otherApp}" manage=off
 
 echo "yabai configuration loaded.."#!/usr/bin/env bash
