@@ -182,23 +182,28 @@ alias proxy="export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.
 export PATH=$PATH:/Users/alex/.spicetify
 alias rustl='rustlings'
 alias tmux-session='~/Desktop/shell-scripts/tmux-session'
+alias brewup="brew cleanup -s --prune=all"
+
+function fport() {
+  lsof -i tcp:$1
+}
 
 # autojump start 
  [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
-
-# for fnm
-eval "$(fnm env --use-on-cd)"
 
 # thefuck
 eval $(thefuck --alias)
 
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
-add-zsh-hook -Uz chpwd(){ source <(tea -Eds) }  #tea
+# for fnm
+eval "$(fnm env --use-on-cd)"
 
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+add-zsh-hook -Uz chpwd(){ source <(tea -Eds) }  #tea
 
 # set ranger default editor
 export VISUAL=nvim
 export EDITOR=nvim
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
