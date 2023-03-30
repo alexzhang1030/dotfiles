@@ -129,14 +129,16 @@ alias p="pnpm"
 alias gs="git status"
 alias lg="lazygit"
 alias zj="zellij"
-alias nv="nvim"
+alias nv="neovide"
 alias lv="lvim"
-alias e="exa"
-alias ea="exa -lah"
 alias etd="extd-cli"
+alias ra="ranger"
+# for system commands alternative
 alias v="nvim"
 alias vim="nvim"
-alias ra="ranger"
+alias ls="lsd"
+alias ll="lsd -l"
+alias du="dust"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -175,6 +177,8 @@ function tencent() {
   ssh 42.192.133.231 -l ubuntu
 }
 
+# for llama
+alias lla="llama"
 
 # MY CUSTOM CODE
 alias unproxy='unset all_proxy && unset https_proxy && unset http_proxy'
@@ -205,5 +209,12 @@ add-zsh-hook -Uz chpwd(){ source <(tea -Eds) }  #tea
 export VISUAL=nvim
 export EDITOR=nvim
 
+# for githubnext/copilot-cli
+eval "$(github-copilot-cli alias -- "$0")"
+
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+
+# Wasmer
+export WASMER_DIR="/Users/alex/.wasmer"
+[ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
