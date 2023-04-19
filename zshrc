@@ -139,6 +139,10 @@ alias vim="nvim"
 alias ls="lsd"
 alias ll="lsd -l"
 alias du="dust"
+alias tree="exa -T"
+alias cat="bat"
+# multrun WeChat
+alias wechat="nohup /Applications/WeChat.app/Contents/MacOS/WeChat > /dev/null 2>&1 &"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
