@@ -1,0 +1,12 @@
+[user]
+	name = alexzhang1030
+	email = 1642114555@qq.com
+[core]
+	autocrlf = input
+[push]
+	autoSetupRemote = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
