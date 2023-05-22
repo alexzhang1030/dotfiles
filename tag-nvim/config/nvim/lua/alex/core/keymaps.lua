@@ -48,7 +48,7 @@ keymap.set("n", "<leader>w", ":w<CR>")
 -- vim-maximizer
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
 
--- nvim-tree 
+-- nvim-tree
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 
 -- telescope
