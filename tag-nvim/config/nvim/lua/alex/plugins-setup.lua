@@ -107,6 +107,15 @@ return packer.startup(function(use)
 	-- smooth scrolling
 	use("karb94/neoscroll.nvim")
 
+	-- lazygit
+	use({
+		"kdheepak/lazygit.nvim",
+		-- optional for floating window border decoration
+		requires = {
+			"nvim-lua/plenary.nvim",
+		},
+	})
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
