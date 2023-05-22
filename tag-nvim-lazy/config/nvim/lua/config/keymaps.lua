@@ -44,3 +44,6 @@ keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 
 -- write
 keymap.set("n", "<leader>w", ":w<CR>")
+
+-- For plugins
+keymap.set("n", "<leader>lg", ":LazyGit<CR>")
