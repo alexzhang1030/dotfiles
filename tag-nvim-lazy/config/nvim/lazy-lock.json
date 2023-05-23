@@ -28,6 +28,7 @@
   "neo-tree.nvim": { "branch": "v2.x", "commit": "e5594d53986b34e584e8afe2ea6ad99d6f6d2105" },
   "neoconf.nvim": { "branch": "main", "commit": "bbf98ce53481e6e8d6507de5a6f18d3264fb0df7" },
   "neodev.nvim": { "branch": "main", "commit": "2daabebac1b0b2ab7abba298c1a8f07a542866a6" },
+  "nightfly": { "branch": "master", "commit": "848ff6bb80c43b8012745f2de5a6f76e8e3fb251" },
   "noice.nvim": { "branch": "main", "commit": "f5178da0097e964b37951a0ebc078fdcc14280f3" },
   "nui.nvim": { "branch": "main", "commit": "698e75814cd7c56b0dd8af4936bcef2d13807f3c" },
   "null-ls.nvim": { "branch": "main", "commit": "77e53bc3bac34cc273be8ed9eb9ab78bcf67fa48" },
