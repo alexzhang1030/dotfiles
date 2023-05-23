@@ -7,9 +7,6 @@ export PATH=/bin:/usr/bin:/usr/local/bin:$PATH
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# setting autojump
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
-
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/alex/.oh-my-zsh"
 
@@ -192,13 +189,12 @@ export PATH=$PATH:/Users/alex/.spicetify
 alias rustl='rustlings'
 alias tmux-session='~/Desktop/shell-scripts/tmux-session'
 alias brewup="brew cleanup -s --prune=all"
+# joshuto
+alias jo="joshuto"
 
 function fport() {
   lsof -i tcp:$1
 }
-
-# autojump start 
- [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 
 # thefuck
 eval $(thefuck --alias)
@@ -223,3 +219,6 @@ eval "$(github-copilot-cli alias -- "$0")"
 # Wasmer
 export WASMER_DIR="/Users/alex/.wasmer"
 [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
+
+# zoxide
+eval "$(zoxide init zsh)"

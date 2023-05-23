@@ -18,45 +18,46 @@ yabai -m signal --add event=display_removed action="~/.config/yabai/initializati
 yabai -m signal --add event=window_focused action="~/.config/yabai/change-window-border-color-when-window-focused.sh"
 
 # global settings
-yabai -m config mouse_follows_focus          off
-yabai -m config focus_follows_mouse          off
-yabai -m config window_placement             second_child
-yabai -m config window_topmost               off
-yabai -m config window_shadow                float
+yabai -m config mouse_follows_focus off
+yabai -m config focus_follows_mouse off
+yabai -m config window_placement second_child
+yabai -m config window_topmost off
+yabai -m config window_shadow float
 
-yabai -m config window_border                on
-yabai -m config window_border_placement      inset
-yabai -m config window_border_blur           off
-yabai -m config window_border_hidpi          off
-yabai -m config window_border_width          3
-yabai -m config window_border_radius         12
+yabai -m config window_border on
+yabai -m config window_border_placement inset
+yabai -m config window_border_blur off
+yabai -m config window_border_hidpi off
+yabai -m config window_border_width 3
+yabai -m config window_border_radius 12
 yabai -m config active_window_border_topmost off
-yabai -m config active_window_border_color   0xfcFFEE58
-yabai -m config normal_window_border_color   0x00ffffff
-yabai -m config insert_window_border_color   0xffd75f5f
+yabai -m config active_window_border_color 0xfcFFEE58
+yabai -m config normal_window_border_color 0x00ffffff
+yabai -m config insert_window_border_color 0xffd75f5f
 
-yabai -m config window_opacity               off
-yabai -m config window_opacity_duration      96
-yabai -m config active_window_opacity        1.0
-yabai -m config normal_window_opacity        1.0
-yabai -m config split_ratio                  0.50
-yabai -m config auto_balance                 off
-yabai -m config mouse_modifier               fn
-yabai -m config mouse_action1                move
-yabai -m config mouse_action2                resize
+yabai -m config window_opacity off
+yabai -m config window_opacity_duration 96
+yabai -m config active_window_opacity 1.0
+yabai -m config normal_window_opacity 1.0
+yabai -m config split_ratio 0.50
+yabai -m config auto_balance off
+yabai -m config mouse_modifier fn
+yabai -m config mouse_action1 move
+yabai -m config mouse_action2 resize
 
 # general space settings(设置间隔,都设置成0)
-yabai -m config layout                       bsp
-yabai -m config top_padding                  2
-yabai -m config bottom_padding               26
-yabai -m config left_padding                 2
-yabai -m config right_padding                2
-yabai -m config window_gap                   1
+yabai -m config layout bsp
+yabai -m config top_padding 2
+yabai -m config bottom_padding 26
+yabai -m config left_padding 2
+yabai -m config right_padding 2
+yabai -m config window_gap 1
 
 # 动画
 #yabai -m config window_animation_duration    0.30
 
 otherApp='^(IINA|Finder|Calendar|日历|System Preferences|System Settings|系统偏好设置|Mail|微信|WeChat|QQ|网易云音乐|NetEaseMusic|Alfred Preferences|Tencent Lemon|企业微信|WeCom|Spotify|预览|Karabiner-Elements|aDrive|Books|Telegram|Discord|Preview|迅雷|OBS Studio|Anytype|Notion|Logseq|YesPlayMusic|TencentMeeting|Navicat|Todoist|Raycast|R3PLAY|Grammarly Desktop|Hepta|OpenAI Translator|Warp|Docker Desktop|Navicat Premium|OrbStack|MacGPT|XMind|Arc|zeroG|Draw Things|Slack|Plain Text Editor)$'
-yabai -m rule --add app="${otherApp}" manage=off
+# yabai -m rule --add app="${otherApp}" manage=off
+yabai -m rule --add app="*" manage=off
 
-echo "yabai configuration loaded.."#!/usr/bin/env bash
+echo "yabai configuration loaded.." #!/usr/bin/env bash
