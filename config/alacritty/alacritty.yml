@@ -1,0 +1,21 @@
+live_config_reload: true
+
+import:
+  # - ~/.config/alacritty/challenger-deep/challenger-deep.yml
+  - ~/.config/alacritty/midnight-haze//midnight-haze.yml
+
+window:
+  opacity: 0.85
+  padding:
+    x: 18
+    y: 16
+  dynamic_padding: false
+  # decorations: buttonless
+
+font:
+  normal:
+    # family: "Maple Mono NF"
+    # family: "MonoLisa Nerd Font Mono"
+    family: "FiraCode Nerd Font Mono"
+  size: 18.0
+  AppleFontSmoothing: true
