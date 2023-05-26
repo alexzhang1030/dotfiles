@@ -124,7 +124,9 @@ keymap = [
 	{ keys = [ "g", "d" ],		command = "cd ~/Downloads" },
 	{ keys = [ "g", "e" ],		command = "cd /etc" },
 	{ keys = [ "g", "h" ],		command = "cd ~/" },
-	{ keys = [ "?" ],		command = "help" }
+	{ keys = [ "?" ],		command = "help" },
+
+	{ keys = [ "z", "z" ],		command = "z" }
 ]
 
 [task_view]
