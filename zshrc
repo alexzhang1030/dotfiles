@@ -220,3 +220,6 @@ export WASMER_DIR="/Users/alex/.wasmer"
 
 # zoxide
 eval "$(zoxide init zsh)"
+
+# change lazygit default config path
+export XDG_CONFIG_HOME="$HOME/.config"
