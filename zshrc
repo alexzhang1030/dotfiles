@@ -185,6 +185,27 @@ alias tmux-session='~/Desktop/shell-scripts/tmux-session'
 alias brewup="brew cleanup -s --prune=all"
 # joshuto
 alias jo="joshuto"
+# alacritty start
+set_alacritty_opacity() {
+  yq e -i ".window.opacity = $1" ~/.config/alacritty/alacritty.yml
+}
+check_alacritty_opacity() {
+  current_term=`echo $TERM`
+  if [ "$current_term" != "alacritty" ]; then
+    return
+  fi
+  opacity=`yq '.window.opacity' ~/.config/alacritty/alacritty.yml`
+
+  if [ "$opacity" == "0.85" ]; then
+    set_alacritty_opacity "1"
+  else
+    set_alacritty_opacity "0.85"
+  fi 
+}
+zle -N toggle_alacritty_opacity check_alacritty_opacity
+# ctrl + O 切换 alacritty 的透明
+bindkey '^O' toggle_alacritty_opacity
+# alacritty end
 
 function fport() {
   lsof -i tcp:$1
