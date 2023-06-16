@@ -2,7 +2,7 @@ live_config_reload: true
 
 import:
   # - ~/.config/alacritty/challenger-deep/challenger-deep.yml
-  - ~/.config/alacritty/midnight-haze//midnight-haze.yml
+  - ~/.config/alacritty/midnight-haze/midnight-haze.yml
 
 window:
   opacity: 0.85
@@ -10,7 +10,8 @@ window:
     x: 18
     y: 16
   dynamic_padding: false
-  # decorations: buttonless
+  decorations: buttonless
+  startup_mode: "Maximized"
 
 font:
   normal:

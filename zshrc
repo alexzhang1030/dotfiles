@@ -84,11 +84,7 @@ plugins=(
 	git
 	zsh-syntax-highlighting
 	zsh-autosuggestions
-	vi-mode
-	copypath
-	copyfile
-	web-search
-	macos
+  vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
