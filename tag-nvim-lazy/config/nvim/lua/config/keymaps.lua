@@ -48,3 +48,6 @@ keymap.set("n", "<leader>w", ":w<CR>")
 ---------------------
 -- Plugin Keymaps
 ---------------------
+
+-- navbuddy
+keymap.set("n", "<leader>cn", ":Navbuddy<CR>")

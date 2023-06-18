@@ -16,7 +16,7 @@ window:
 font:
   normal:
     # family: "Maple Mono NF"
-    family: "MonoLisa Nerd Font Mono"
-    # family: "FiraCode Nerd Font Mono"
+    # family: "MonoLisa Nerd Font Mono"
+    family: "FiraCode Nerd Font Mono"
   size: 18.0
   AppleFontSmoothing: true
