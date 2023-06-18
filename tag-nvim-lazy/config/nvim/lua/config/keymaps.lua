@@ -43,7 +43,7 @@ keymap.set("n", "<leader>tn", ":tabn<CR>") --  go to next tab
 keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 
 -- write
-keymap.set("n", "<leader>w", ":w<CR>")
+keymap.set("n", "<leader>fw", ":w<CR>")
 
 ---------------------
 -- Plugin Keymaps
@@ -51,3 +51,7 @@ keymap.set("n", "<leader>w", ":w<CR>")
 
 -- navbuddy
 keymap.set("n", "<leader>cn", ":Navbuddy<CR>")
+
+-- harpoon
+keymap.set("n", "<leader>ha", ":lua require('harpoon.mark').add_file()<CR>")
+keymap.set("n", "<leader>ht", ":lua require('harpoon.ui').toggle_quick_menu()<CR>")
