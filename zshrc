@@ -191,7 +191,8 @@ set_alacritty_opacity() {
 }
 check_alacritty_opacity() {
   current_term=`echo $TERM`
-  if [ "$current_term" != "alacritty" ]; then
+  # screen-256color is `tmux`
+  if [[ "$current_term" != "alacritty" || "$current_term" != 'screen-256color' ]]; then
     return
   fi
   opacity=`yq '.window.opacity' ~/.config/alacritty/alacritty.yml`
