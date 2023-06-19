@@ -18,8 +18,8 @@ keymap.set("n", "<leader>nh", ":nohl<CR>")
 keymap.set("n", "x", '"_x')
 
 -- increment/decrement numbers
-keymap.set("n", "<leader>+", "<C-a>") -- increment
-keymap.set("n", "<leader>-", "<C-x>") -- decrement
+keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment
+keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" }) -- decrement
 
 -- quick move
 keymap.set("n", "J", "5j")
@@ -43,15 +43,15 @@ keymap.set("n", "<leader>tn", ":tabn<CR>") --  go to next tab
 keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 
 -- write
-keymap.set("n", "<leader>fw", ":w<CR>")
+keymap.set("n", "<leader>fw", ":w<CR>", { desc = "Write file" })
 
 ---------------------
 -- Plugin Keymaps
 ---------------------
 
 -- navbuddy
-keymap.set("n", "<leader>cn", ":Navbuddy<CR>")
+keymap.set("n", "<leader>cn", ":Navbuddy<CR>", { desc = "Show Navbuddy" })
 
 -- harpoon
-keymap.set("n", "<leader>ha", ":lua require('harpoon.mark').add_file()<CR>")
-keymap.set("n", "<leader>ht", ":lua require('harpoon.ui').toggle_quick_menu()<CR>")
+keymap.set("n", "<leader>ha", ":lua require('harpoon.mark').add_file()<CR>", { desc = "Harpoon add mark" })
+keymap.set("n", "<leader>ht", ":lua require('harpoon.ui').toggle_quick_menu()<CR>", { desc = "Harpoon show UI" })
