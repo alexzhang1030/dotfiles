@@ -6,4 +6,5 @@ My custom dotfiles powered by [RCM](https://github.com/thoughtbot/rcm).
 
 - `mkrc [-t] <[file|dir]-path>`: move to `~/.dotfiles` dir and create a symbolic to current
 - `lsrc`: list all hosting dotfiles
+- `rcup [-t <tag-name>]`: deploy dotfiles
 
