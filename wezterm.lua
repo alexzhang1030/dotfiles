@@ -17,11 +17,26 @@ config.font = wezterm.font_with_fallback({
 	"FiraCode Nerd Font Mono",
 })
 config.font_size = 18.0
-config.line_height = 1.8
+config.line_height = 1.45
 
 -- WIINDOW --
 config.window_decorations = "RESIZE"
 config.window_background_opacity = 0.9
+-- WINDOW_TOGGLE_OPACITY --
+wezterm.on("toggle-opacity", function(window)
+	local overrides = window:get_config_overrides() or {}
+	if not overrides.window_background_opacity then
+		overrides.window_background_opacity = 1
+	else
+		overrides.window_background_opacity = nil
+	end
+	window:set_config_overrides(overrides)
+end)
+
+-- SHORTCUT_KEYS --
+config.keys = {
+	{ key = "o", mods = "CTRL", action = wezterm.action.EmitEvent("toggle-opacity") },
+}
 
 -- STATRUP --
 wezterm.on("gui-startup", function(cmd)
