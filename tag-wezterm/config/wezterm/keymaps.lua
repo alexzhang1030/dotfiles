@@ -34,6 +34,10 @@ return {
 	{ key = "j", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Down") },
 	{ key = "k", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Up") },
 	{ key = "l", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Right") },
+	{ key = "LeftArrow", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Left") },
+	{ key = "RightArrow", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Down") },
+	{ key = "UpArrow", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Up") },
+	{ key = "DownArrow", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Right") },
 
 	-- rename tab
 	{
