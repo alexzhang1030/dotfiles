@@ -58,3 +58,10 @@ keymap.set("n", "<leader>ht", ":lua require('harpoon.ui').toggle_quick_menu()<CR
 
 -- ccc
 keymap.set("n", "<leader>cc", ":CccPick<CR>", { desc = "Open color picker" })
+
+-- hypersonic
+keymap.set("n", "<leader>r", ":Hypersonic <CR>", { desc = "Open Hypersonic", silent = true })
+
+-- ufo
+keymap.set("n", "zR", require("ufo").openAllFolds)
+keymap.set("n", "zM", require("ufo").closeAllFolds)
