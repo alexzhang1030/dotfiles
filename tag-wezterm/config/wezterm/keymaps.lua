@@ -3,7 +3,7 @@ local act = wezterm.action
 
 return {
 	-- toggle window opacity
-	{ key = "o", mods = "CTRL", action = wezterm.action.EmitEvent("toggle-opacity") },
+	{ key = "o", mods = "CTRL|ALT", action = wezterm.action.EmitEvent("toggle-opacity") },
 
 	-- create tab
 	{ key = "n", mods = "CMD", action = wezterm.action.SpawnTab("DefaultDomain") },

@@ -53,8 +53,19 @@ keymap.set("n", "<leader>fw", ":w<CR>", { desc = "Write file" })
 keymap.set("n", "<leader>cn", ":Navbuddy<CR>", { desc = "Show Navbuddy" })
 
 -- harpoon
-keymap.set("n", "<leader>ha", ":lua require('harpoon.mark').add_file()<CR>", { desc = "Harpoon add mark" })
-keymap.set("n", "<leader>ht", ":lua require('harpoon.ui').toggle_quick_menu()<CR>", { desc = "Harpoon show UI" })
+keymap.set(
+  "n",
+  "<leader>ha",
+  ":lua require('harpoon.mark').add_file()<CR>",
+  { desc = "Harpoon add mark", silent = true }
+)
+keymap.set(
+  "n",
+  "<leader>ht",
+  ":lua require('harpoon.ui').toggle_quick_menu()<CR>",
+  { desc = "Harpoon show UI", silent = true }
+)
+keymap.set("n", "<leader>hs", ":Telescope harpoon marks<CR>", { desc = "Harpoon marks with Telescope", silent = true })
 
 -- ccc
 keymap.set("n", "<leader>cc", ":CccPick<CR>", { desc = "Open color picker" })
