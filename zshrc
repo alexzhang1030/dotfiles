@@ -207,9 +207,6 @@ export EDITOR=nvim
 # for githubnext/copilot-cli
 eval "$(github-copilot-cli alias -- "$0")"
 
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
-
 # Wasmer
 export WASMER_DIR="/Users/alex/.wasmer"
 [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
@@ -219,3 +216,8 @@ eval "$(zoxide init zsh)"
 
 # change lazygit default config path
 export XDG_CONFIG_HOME="$HOME/.config"
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+
+[ -f "/Users/alex/.ghcup/env" ] && source "/Users/alex/.ghcup/env" # ghcup-envexport PATH="/opt/homebrew/opt/ruby/bin:$PATH"
