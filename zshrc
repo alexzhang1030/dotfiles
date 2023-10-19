@@ -221,3 +221,6 @@ export XDG_CONFIG_HOME="$HOME/.config"
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
 
 [ -f "/Users/alex/.ghcup/env" ] && source "/Users/alex/.ghcup/env" # ghcup-envexport PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export PATH="/Users/alex/.moon/bin:$PATH"
+
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"

@@ -33,7 +33,7 @@ return {
     end,
   },
   {
-    "null-ls.nvim",
+    "none-ls.nvim",
     opts = { border = BORDER_STYLE },
   },
   {

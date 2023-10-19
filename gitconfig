@@ -4,6 +4,7 @@
 [core]
 	autocrlf = input
   pager = delta
+  ignoreCase = false
 [interactive]
   diffFilter = delta --color-only --features=interactive
 [delta]
@@ -26,3 +27,5 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[init]
+	defaultBranch = main
