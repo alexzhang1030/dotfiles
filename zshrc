@@ -135,8 +135,11 @@ alias ll="lsd -l"
 alias du="dust"
 alias tree="exa -T"
 alias cat="bat"
+alias tail="tailspin" # or you can use tspin
 # multrun WeChat
 alias wechat="nohup /Applications/WeChat.app/Contents/MacOS/WeChat > /dev/null 2>&1 &"
+# clear dns cache
+alias clear_dns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

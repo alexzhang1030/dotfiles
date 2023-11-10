@@ -32,6 +32,7 @@ return {
           crust = "#000000",
         },
       },
+      flash = true,
     },
   },
 
@@ -42,6 +43,16 @@ return {
     name = "nightfly",
     lazy = true,
   },
+
+  {
+    "rebelot/kanagawa.nvim",
+    name = "kanagawa",
+    lazy = true,
+    opts = {
+      theme = "wave",
+    },
+  },
+
   -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
