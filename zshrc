@@ -207,9 +207,6 @@ add-zsh-hook -Uz chpwd(){ source <(tea -Eds) }  #tea
 export VISUAL=nvim
 export EDITOR=nvim
 
-# for githubnext/copilot-cli
-eval "$(github-copilot-cli alias -- "$0")"
-
 # Wasmer
 export WASMER_DIR="/Users/alex/.wasmer"
 [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
