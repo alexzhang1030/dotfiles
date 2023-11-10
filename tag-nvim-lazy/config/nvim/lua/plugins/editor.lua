@@ -94,4 +94,9 @@ return {
       })
     end,
   },
+  -- treesitter based to hjkl
+  {
+    "gsuuon/tshjkl.nvim",
+    config = true,
+  },
 }
