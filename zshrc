@@ -170,14 +170,6 @@ function clean_command() {
 zle -N clean_command
 bindkey -M viins "\eg" clean_command
 
-# azure server
-alias azure="ssh -i ~/.ssh/azure/azure-server.cer azureuser@20.235.120.56"
-
-# tencent ubuntu
-function tencent() {
-  ssh 42.192.133.231 -l ubuntu
-}
-
 # for llama
 alias lla="llama"
 
