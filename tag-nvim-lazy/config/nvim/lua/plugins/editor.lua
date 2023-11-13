@@ -1,6 +1,10 @@
 -- editor behaviours
 
 return {
+  -- wakatime
+  {
+    "wakatime/vim-wakatime",
+  },
   -- session management
   {
     "folke/persistence.nvim",
