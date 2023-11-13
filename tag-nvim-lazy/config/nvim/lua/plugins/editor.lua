@@ -95,6 +95,10 @@ return {
     end,
   },
   -- treesitter based to hjkl
+  -- default keymaps:
+  -- toggle: `alt + v`
+  -- toggle_outer: `shift + alt + v`
+  -- toggle_named: `shift + alt + n`
   {
     "gsuuon/tshjkl.nvim",
     config = true,

@@ -71,7 +71,7 @@ keymap.set("n", "<leader>hs", ":Telescope harpoon marks<CR>", { desc = "Harpoon 
 keymap.set("n", "<leader>cc", ":CccPick<CR>", { desc = "Open color picker" })
 
 -- hypersonic
-keymap.set("n", "<leader>r", ":Hypersonic <CR>", { desc = "Open Hypersonic", silent = true })
+-- keymap.set("n", "<leader>cr", ":Hypersonic <CR>", { desc = "Open Hypersonic", silent = true })
 
 -- ufo
 keymap.set("n", "zR", require("ufo").openAllFolds)
@@ -82,3 +82,16 @@ keymap.set({ "n", "o", "x" }, "w", "<cmd>lua require('spider').motion('w')<CR>",
 keymap.set({ "n", "o", "x" }, "e", "<cmd>lua require('spider').motion('e')<CR>", { desc = "Spider-e" })
 keymap.set({ "n", "o", "x" }, "b", "<cmd>lua require('spider').motion('b')<CR>", { desc = "Spider-b" })
 keymap.set({ "n", "o", "x" }, "ge", "<cmd>lua require('spider').motion('ge')<CR>", { desc = "Spider-ge" })
+
+-- refactoring
+keymap.set("x", "<leader>re", ":Refactor extract ")
+keymap.set("x", "<leader>rf", ":Refactor extract_to_file ")
+
+keymap.set("x", "<leader>rv", ":Refactor extract_var ")
+
+keymap.set({ "n", "x" }, "<leader>ri", ":Refactor inline_var")
+
+keymap.set("n", "<leader>rI", ":Refactor inline_func")
+
+keymap.set("n", "<leader>rb", ":Refactor extract_block")
+keymap.set("n", "<leader>rbf", ":Refactor extract_block_to_file")
