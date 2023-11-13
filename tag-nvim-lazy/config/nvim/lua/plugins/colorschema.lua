@@ -53,11 +53,20 @@ return {
     },
   },
 
+  {
+    "2nthony/vitesse.nvim",
+    name = "vitesse",
+    dependencies = {
+      "tjdevries/colorbuddy.nvim",
+    },
+  },
+
   -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      -- colorscheme = "catppuccin",
+      colorscheme = "vitesse",
     },
   },
 }
