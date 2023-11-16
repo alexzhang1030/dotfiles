@@ -216,3 +216,6 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export PATH="/Users/alex/.moon/bin:$PATH"
 
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+# === effso start ===
+eval "$(effso env)"
+# === effso end ===
