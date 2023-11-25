@@ -84,6 +84,11 @@ return {
       },
     },
   },
+  -- auto indent
+  {
+    "vidocqh/auto-indent.nvim",
+    opts = {},
+  },
   -- fold enhancement
   {
     "kevinhwang91/nvim-ufo",
