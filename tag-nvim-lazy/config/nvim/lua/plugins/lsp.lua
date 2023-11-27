@@ -31,4 +31,8 @@ return {
       })
     end,
   },
+  -- lsp lens
+  {
+    "VidocqH/lsp-lens.nvim",
+  },
 }
