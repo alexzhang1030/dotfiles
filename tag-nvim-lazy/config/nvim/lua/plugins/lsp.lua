@@ -22,16 +22,17 @@ return {
     },
     -- your lsp config or other stuff
   },
-  {
-    "jinzhongjia/LspUI.nvim",
-    branch = "main",
-    config = function()
-      require("LspUI").setup({
-        -- config options go here
-      })
-    end,
-  },
-  -- lsp lens
+  -- Lsp UI force requires neovim >= 0.10.0, so let's not use it for now
+  -- {
+  --   "jinzhongjia/LspUI.nvim",
+  --   branch = "main",
+  --   config = function()
+  --     require("LspUI").setup({
+  --       -- config options go here
+  --     })
+  --   end,
+  -- },
+  -- -- lsp lens
   {
     "VidocqH/lsp-lens.nvim",
   },
