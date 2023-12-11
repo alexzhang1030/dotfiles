@@ -3,7 +3,7 @@ function git_clean_current_branch() {
   # -s -> slient
   read -k 1 -s "reply?Are you sure you want to clean current branch? (Y/n): "
   echo # echo empty line
-  # 检查用户的回答
+  # check
   if [[ $reply =~ ^[Yy]?$ ]]; then
       local current_branch=$(git rev-parse --abbrev-ref HEAD)
 
