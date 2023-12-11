@@ -33,5 +33,6 @@ load_fns
 You can use functions like this:
 
 ```sh
+# note the function name must be the same with file name
 alias gcl='git_clean_current_branch'
 ```
