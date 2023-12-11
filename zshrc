@@ -119,7 +119,15 @@ bindkey '^F' autosuggest-accept
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # custom functions
-fpath=( ~/.zsh-functions "${fpath[@]}" )
+function load_fns() {
+  function_dir="$HOME/.zsh_functions"
+  fpath=($function_dir $fpath)
+  for function_file in $function_dir/*; do
+      function_name=$(basename $function_file)
+      autoload -Uz $function_name
+  done
+}
+load_fns
 
 # alias
 alias p="pnpm"
@@ -143,15 +151,12 @@ alias tail="tailspin" # or you can use tspin
 alias wechat="nohup /Applications/WeChat.app/Contents/MacOS/WeChat > /dev/null 2>&1 &"
 # clear dns cache
 alias clear_dns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
+# clear current branch
+alias gcl='git_clean_current_branch'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-autoload -Uz git_clean_current_branch 
-alias gcl='git_clean_current_branch'
-
-# Fig post block. Keep at the bottom of this file.
 
 # fix zsh * flag
 setopt no_nomatch
@@ -167,14 +172,6 @@ export PATH="$PNPM_HOME:$PATH"
 # Bun
 export BUN_INSTALL="/Users/alex/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-
-
-# my custom widget
-function clean_command() {
-  zle clear-screen
-}
-zle -N clean_command
-bindkey -M viins "\eg" clean_command
 
 # for llama
 alias lla="llama"
@@ -215,13 +212,14 @@ eval "$(zoxide init zsh)"
 # change lazygit default config path
 export XDG_CONFIG_HOME="$HOME/.config"
 
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
-
 [ -f "/Users/alex/.ghcup/env" ] && source "/Users/alex/.ghcup/env" # ghcup-envexport PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 export PATH="/Users/alex/.moon/bin:$PATH"
 
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+
 # === effso start ===
 eval "$(effso env)"
 # === effso end ===
+
+#  Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
