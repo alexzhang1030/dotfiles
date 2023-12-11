@@ -1,5 +1,8 @@
-function switchAndCleanBranch() {
-  read "reply?Are you sure you want to clean current branch? [yY]"
+function git_clean_current_branch() {
+  # -k 1 -> read a char
+  # -s -> slient
+  read -k 1 -s "reply?Are you sure you want to clean current branch? (Y/n): "
+  echo # echo empty line
   # 检查用户的回答
   if [[ $reply =~ ^[Yy]?$ ]]; then
       local current_branch=$(git rev-parse --abbrev-ref HEAD)
@@ -27,8 +30,10 @@ function switchAndCleanBranch() {
       else
           echo "Branch '$current_branch' deleted successfully."
       fi
-  else
+  elif [[ $reply =~ ^[Nn]$ ]]; then
       echo "Action cancelled."
       return 1  # return non-zero value to cancel
+  else
+      return 1
   fi
 }
