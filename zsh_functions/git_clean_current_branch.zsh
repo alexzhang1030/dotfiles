@@ -1,30 +1,38 @@
 function git_clean_current_branch() {
-  # -k 1 -> read a char
-  # -s -> slient
+  # -k 1 -> read a character from input
+  # -s -> slient mode, don't echo input
   read -k 1 -s "reply?Are you sure you want to clean current branch? (Y/n): "
   echo # echo empty line
-  # check
+
   if [[ $reply =~ ^[Yy]?$ ]]; then
+      # get current branch 
       local current_branch=$(git rev-parse --abbrev-ref HEAD)
 
-      if [ "$current_branch" = "main" ]; then
-          echo "Already on 'main' branch."
+      # fetch default main branch name from remote repository 
+      local default_branch=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
+
+      # check if is already on default branch
+      if [ "$current_branch" = "$default_branch" ]; then
+          echo "Already on '$default_branch' branch."
           return
       fi
 
-      git switch main
+      # switch to default main branch
+      git switch "$default_branch"
       if [ $? -ne 0 ]; then
-          echo "Failed to switch to 'main' branch."
+          echo "Failed to switch to '$default_branch' branch."
           return
       fi
 
+      # pull changes from remote repository
       git pull
       if [ $? -ne 0 ]; then
-          echo "Failed to pull changes for 'main' branch."
+          echo "Failed to pull changes for '$default_branch' branch."
           return
       fi
 
-      git branch -d $current_branch
+      # remove current branch
+      git branch -d "$current_branch"
       if [ $? -ne 0 ]; then
           echo "Failed to delete branch '$current_branch'."
       else
@@ -32,7 +40,7 @@ function git_clean_current_branch() {
       fi
   elif [[ $reply =~ ^[Nn]$ ]]; then
       echo "Action cancelled."
-      return 1  # return non-zero value to cancel
+      return 1
   else
       return 1
   fi
