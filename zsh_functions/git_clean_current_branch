@@ -1,3 +1,5 @@
+#!/bin/zsh -f
+
 function git_clean_current_branch() {
   # -k 1 -> read a character from input
   # -s -> slient mode, don't echo input
