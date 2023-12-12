@@ -1,25 +1,14 @@
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
-source ~/.profile
-
-# ----------------------------
-# --------- Options ----------
-# ----------------------------
-
-# fix zsh * flag
-setopt no_nomatch
-
 
 # ----------------------------
 # ----------- Env ------------
 # ----------------------------
+source ~/.profile
 export PATH=/bin:/usr/bin:/usr/local/bin:$PATH
-export PATH=$PATH:/Users/alex/.spicetify
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-source $ZSH/oh-my-zsh.sh
+# path to oh-my-zsh installation.
+export ZSH="/Users/alex/.oh-my-zsh"
 
 # pnpm
 export PNPM_HOME="/Users/alex/Library/pnpm"
@@ -32,9 +21,6 @@ export PATH="$PNPM_HOME:$PATH"
 # bun
 export BUN_INSTALL="/Users/alex/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-
-# path to your oh-my-zsh installation.
-export ZSH="/Users/alex/.oh-my-zsh"
 
 # thefuck
 eval $(thefuck --alias)
@@ -70,6 +56,13 @@ eval "$(effso env)"
 # === effso end ===
 
 # ----------------------------
+# --------- Options ----------
+# ----------------------------
+
+# fix zsh * flag
+setopt no_nomatch
+
+# ----------------------------
 # --------- Functions --------
 # ----------------------------
 
@@ -102,7 +95,6 @@ plugins=(
 	zsh-autosuggestions
   vi-mode
 )
-
 
 # ----------------------------
 # -------- Shortcuts ---------
@@ -144,5 +136,6 @@ alias brewup="brew cleanup -s --prune=all"
 # joshuto
 alias jo="joshuto"
 
+source $ZSH/oh-my-zsh.sh
 #  Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
