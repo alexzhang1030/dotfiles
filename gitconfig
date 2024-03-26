@@ -7,6 +7,14 @@
   ignoreCase = false
 [interactive]
   diffFilter = delta --color-only --features=interactive
+[diff]
+  tool = difftastic
+[difftool]
+  prompt = false
+[difftool "difftastic"]
+  cmd = difft "$LOCAL" "$REMOTE" 
+[pager]
+  difftool = true
 [delta]
   features = decorations
   line-numbers = true

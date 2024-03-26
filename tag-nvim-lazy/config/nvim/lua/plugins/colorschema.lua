@@ -67,6 +67,7 @@ return {
     opts = {
       -- colorscheme = "kanagawa",
       colorscheme = "catppuccin",
+      -- colorscheme = "tokyonight",
     },
   },
 }
