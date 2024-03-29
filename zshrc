@@ -1,13 +1,42 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
+# CodeWhisperer pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh"
+# ----------------------------
+# --------- Startup ----------
+# ----------------------------
+
+# ----------------------------
+# -------- Functions ---------
+# ----------------------------
+
+function load_fns() {
+  function_dir="$HOME/.zsh_functions"
+  fpath=($function_dir $fpath)
+  for function_file in $function_dir/*; do
+      function_name=$(basename $function_file)
+      autoload -Uz $function_name
+  done
+}
+load_fns # call when initializing
+
+function fport() {
+  lsof -i tcp:$1
+}
+
+# yazi
+function ya() {
+	tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
 
 # ----------------------------
 # ----------- Env ------------
 # ----------------------------
 source ~/.profile
 export PATH=/bin:/usr/bin:/usr/local/bin:$PATH
-
-# path to oh-my-zsh installation.
 export ZSH="/Users/alex/.oh-my-zsh"
 
 # pnpm
@@ -18,23 +47,16 @@ export PATH="$PNPM_HOME:$PATH"
 # bun completions
 [ -s "/Users/alex/.bun/_bun" ] && source "/Users/alex/.bun/_bun"
 
-# bun
+# Bun
 export BUN_INSTALL="/Users/alex/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # thefuck
 eval $(thefuck --alias)
-
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
 # for fnm
 eval "$(fnm env --use-on-cd)"
-
-add-zsh-hook -Uz chpwd(){ source <(tea -Eds) }  #tea
-
-# set ranger default editor
-export VISUAL=nvim
-export EDITOR=nvim
 
 # Wasmer
 export WASMER_DIR="/Users/alex/.wasmer"
@@ -47,44 +69,39 @@ eval "$(zoxide init zsh)"
 export XDG_CONFIG_HOME="$HOME/.config"
 
 [ -f "/Users/alex/.ghcup/env" ] && source "/Users/alex/.ghcup/env" # ghcup-envexport PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+
+# moonbit
 export PATH="/Users/alex/.moon/bin:$PATH"
 
-export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+# set ranger default editor
+export VISUAL=nvim
+export EDITOR=nvim
 
 # === effso start ===
 eval "$(effso env)"
 # === effso end ===
 
+# dasel
+export fpath=(~/zsh/site-functions $fpath)
+mkdir -p ~/zsh/site-functions
+dasel completion zsh > ~/zsh/site-functions/_dasel
+compinit
+
+# fzf
+export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git --color=always'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_DEFAULT_OPTS="--ansi"
+
 # ----------------------------
-# --------- Options ----------
+# ---------- Config ----------
 # ----------------------------
+ZSH_THEME="spaceship"
 
 # fix zsh * flag
 setopt no_nomatch
 
-# ----------------------------
-# --------- Functions --------
-# ----------------------------
-
-# custom functions loading
-function load_custom_fns() {
-  function_dir="$HOME/.zsh_functions"
-  fpath=($function_dir $fpath)
-  for function_file in $function_dir/*; do
-      function_name="${function_file:t:r}"
-      autoload -Uz $function_name
-  done
-}
-load_custom_fns
-
-function fport() {
-  lsof -i tcp:$1
-}
-
-# ----------------------------
-# ---------- Theme -----------
-# ----------------------------
-ZSH_THEME="spaceship" # standby: spaceship
+# shortcuts
+bindkey '^F' autosuggest-accept
 
 # ----------------------------
 # --------- Plugins ----------
@@ -96,17 +113,12 @@ plugins=(
   vi-mode
 )
 
-# ----------------------------
-# -------- Shortcuts ---------
-# ----------------------------
-
-# zsh auto suggestion
-bindkey '^F' autosuggest-accept
+# setup oh-my-zsh
+source $ZSH/oh-my-zsh.sh
 
 # ----------------------------
-# ---------- Alias -----------
+# --------- Aliases ----------
 # ----------------------------
-
 alias p="pnpm"
 alias gs="git status"
 alias lg="lazygit"
@@ -121,7 +133,8 @@ alias vim="nvim"
 alias ls="lsd"
 alias ll="lsd -l"
 alias du="dust"
-alias tree="exa -T"
+alias as-tree="tree --fromfile"
+# alias tree="exa -T"
 alias cat="bat"
 alias tail="tailspin" # or you can use tspin
 # multrun WeChat
@@ -133,9 +146,16 @@ alias gcl='git_clean_current_branch'
 alias rustl='rustlings'
 alias tmux-session='~/Desktop/shell-scripts/tmux-session'
 alias brewup="brew cleanup -s --prune=all"
-# joshuto
 alias jo="joshuto"
 
-source $ZSH/oh-my-zsh.sh
+# ----------------------------
+# -------- Completion --------
+# ----------------------------
+
 #  Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+
+
+[[ -f "$HOME/fig-export/dotfiles/dotfile.zsh" ]] && builtin source "$HOME/fig-export/dotfiles/dotfile.zsh"
+
+# CodeWhisperer post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh"
