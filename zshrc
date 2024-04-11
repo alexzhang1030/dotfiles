@@ -147,6 +147,7 @@ alias rustl='rustlings'
 alias tmux-session='~/Desktop/shell-scripts/tmux-session'
 alias brewup="brew cleanup -s --prune=all"
 alias jo="joshuto"
+alias ??="gh copilot suggest"
 
 # ----------------------------
 # -------- Completion --------
