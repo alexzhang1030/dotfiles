@@ -91,7 +91,6 @@ compinit
 export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git --color=always'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS="--ansi"
-
 # ----------------------------
 # ---------- Config ----------
 # ----------------------------
@@ -128,7 +127,6 @@ alias lv="lvim"
 alias etd="extd-cli"
 alias ra="ranger"
 # for system commands alternative
-alias v="nvim"
 alias vim="nvim"
 alias ls="lsd"
 alias ll="lsd -l"

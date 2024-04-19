@@ -112,15 +112,26 @@ return {
     "gsuuon/tshjkl.nvim",
     config = true,
   },
+  ---@type LazySpec
   {
-    "DreamMaoMao/yazi.nvim",
+    "mikavilpas/yazi.nvim",
     dependencies = {
-      "nvim-telescope/telescope.nvim",
       "nvim-lua/plenary.nvim",
     },
-
+    event = "VeryLazy",
     keys = {
-      { "<leader>gy", "<cmd>Yazi<CR>", desc = "Toggle Yazi" },
+      {
+        -- 👇 choose your own keymapping
+        "<leader>gy",
+        function()
+          require("yazi").yazi()
+        end,
+        { desc = "Open the file manager" },
+      },
+    },
+    ---@type YaziConfig
+    opts = {
+      open_for_directories = false,
     },
   },
   -- better error

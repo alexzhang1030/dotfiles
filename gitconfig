@@ -1,6 +1,7 @@
 [user]
-	name = alexzhang1030
-	email = 1642114555@qq.com
+	name = Alex
+	email = alexzhang1030@foxmail.com
+	signingkey = 8CAB8829CD6C87BC
 [core]
 	autocrlf = input
   pager = delta
@@ -37,3 +38,5 @@
 	required = true
 [init]
 	defaultBranch = main
+[commit]
+	gpgsign = true

@@ -28,4 +28,9 @@ return {
       require("refactoring").setup()
     end,
   },
+  -- vue tools
+  {
+    "catgoose/vue-goto-definition.nvim",
+    event = "BufReadPre",
+  },
 }
