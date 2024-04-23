@@ -21,5 +21,6 @@ end)
 return {
 	window_decorations = "RESIZE",
 	window_background_opacity = 0.9,
+	macos_window_background_blur = 20,
 	tab_bar_at_bottom = true,
 }
