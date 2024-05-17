@@ -110,6 +110,7 @@ plugins=(
 	zsh-syntax-highlighting
 	zsh-autosuggestions
   vi-mode
+  git-open
 )
 
 # setup oh-my-zsh
