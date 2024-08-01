@@ -17,7 +17,7 @@ return {
   -- lazyvim.plugins.editor
   {
     "which-key.nvim",
-    opts = { window = { border = BORDER_STYLE } },
+    opts = { win = { border = BORDER_STYLE } },
   },
   {
     "gitsigns.nvim",

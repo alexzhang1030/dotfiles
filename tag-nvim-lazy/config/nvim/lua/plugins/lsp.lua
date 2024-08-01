@@ -20,6 +20,9 @@ return {
         opts = { lsp = { auto_attach = true } },
       },
     },
+    opts = {
+      inlay_hints = { enabled = false },
+    },
     -- your lsp config or other stuff
   },
   -- Lsp UI force requires neovim >= 0.10.0, so let's not use it for now

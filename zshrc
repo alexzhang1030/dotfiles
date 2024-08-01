@@ -37,6 +37,7 @@ function ya() {
 # ----------------------------
 source ~/.profile
 export PATH=/bin:/usr/bin:/usr/local/bin:$PATH
+export PATH="/opt/homebrew/bin:$PATH"
 export ZSH="/Users/alex/.oh-my-zsh"
 
 # pnpm

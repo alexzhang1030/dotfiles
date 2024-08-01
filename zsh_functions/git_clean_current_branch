@@ -10,8 +10,18 @@ function git_clean_current_branch() {
       # get current branch 
       local current_branch=$(git rev-parse --abbrev-ref HEAD)
 
-      # fetch default main branch name from remote repository 
-      local default_branch=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
+      # fetch default main branch name from remote repository or use provided second parameter
+      local default_branch
+      if [ -n "$1" ]; then
+          default_branch="$1"
+          # check if provided branch exists
+          if ! git show-ref --verify --quiet refs/heads/"$default_branch"; then
+              echo "Branch '$default_branch' does not exist."
+              return 1
+          fi
+      else
+          default_branch=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
+      fi
 
       # check if is already on default branch
       if [ "$current_branch" = "$default_branch" ]; then
@@ -34,7 +44,7 @@ function git_clean_current_branch() {
       fi
 
       # remove current branch
-      git branch -d "$current_branch"
+      git branch -D "$current_branch"
       if [ $? -ne 0 ]; then
           echo "Failed to delete branch '$current_branch'."
       else

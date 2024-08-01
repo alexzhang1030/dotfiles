@@ -6,6 +6,10 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
+if vim.g.neovide then
+  vim.opt.linespace = 12
+end
+
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins

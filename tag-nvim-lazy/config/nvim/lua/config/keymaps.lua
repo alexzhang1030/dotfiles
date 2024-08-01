@@ -95,3 +95,6 @@ keymap.set("n", "<leader>rI", ":Refactor inline_func")
 
 keymap.set("n", "<leader>rb", ":Refactor extract_block")
 keymap.set("n", "<leader>rbf", ":Refactor extract_block_to_file")
+
+-- manual open nvim-cmp
+keymap.set("i", "<C-p>", "<C-Space>", { noremap = true, silent = true })
