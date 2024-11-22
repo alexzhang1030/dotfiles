@@ -145,9 +145,11 @@ alias clear_dns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 alias gcl='git_clean_current_branch'
 alias rustl='rustlings'
 alias tmux-session='~/Desktop/shell-scripts/tmux-session'
-alias brewup="brew cleanup -s --prune=all"
+alias brewclean="brew cleanup -s --prune=all"
+alias brewup="brew update && brew outdated | rg '^[^ ]+' | fzf -m | tr '\n' ' ' | xargs brew upgrade && brew cleanup"
 alias jo="joshuto"
 alias ??="gh copilot suggest"
+alias flush_dns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 
 # ----------------------------
 # -------- Completion --------
