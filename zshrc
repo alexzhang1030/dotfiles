@@ -52,8 +52,6 @@ export PATH="$PNPM_HOME:$PATH"
 export BUN_INSTALL="/Users/alex/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# thefuck
-eval $(thefuck --alias)
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
 # for fnm

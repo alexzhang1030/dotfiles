@@ -143,4 +143,9 @@ return {
   --     require("lsp_lines").setup()
   --   end,
   -- },
+  -- cursor
+  {
+    "sphamba/smear-cursor.nvim",
+    opts = {},
+  },
 }
