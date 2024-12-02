@@ -20,7 +20,7 @@ function git_clean_current_branch() {
               return 1
           fi
       else
-          default_branch=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
+          default_branch=$(git remote show origin | awk '/HEAD branch/ {print $NF}')
       fi
 
       # check if is already on default branch
