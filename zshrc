@@ -122,7 +122,6 @@ alias p="pnpm"
 alias gs="git status"
 alias lg="lazygit"
 alias zj="zellij"
-alias nv="neovide"
 alias lv="lvim"
 alias etd="extd-cli"
 alias ra="ranger"
@@ -148,6 +147,11 @@ alias brewup="brew update && brew outdated | rg '^[^ ]+' | fzf -m | tr '\n' ' ' 
 alias jo="joshuto"
 alias ??="gh copilot suggest"
 alias flush_dns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
+
+unalias nv
+nv() {
+  neovide "$@" > /dev/null 2>&1
+}
 
 # ----------------------------
 # -------- Completion --------
