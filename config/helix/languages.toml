@@ -1,0 +1,16 @@
+# in <config_dir>/helix/languages.toml
+[[language]]
+name = "rust"
+
+[[language]]
+name = "typescript"
+language-servers = [
+  { name = "typescript-language-server", except-features = [
+    "format",
+  ] },
+]
+formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+auto-format = true
+
+# [language.config]
+# checkOnSave = { command = "clippy" }
