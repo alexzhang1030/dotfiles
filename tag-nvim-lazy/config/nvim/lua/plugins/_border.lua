@@ -32,11 +32,6 @@ return {
       return opts
     end,
   },
-  -- Since LazyVim v10.x, none-ls is no longer installed by default
-  -- {
-  --   "none-ls.nvim",
-  --   opts = { border = BORDER_STYLE },
-  -- },
   {
     "mason.nvim",
     opts = {
