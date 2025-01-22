@@ -6,6 +6,9 @@ family = "Liga SFMono Nerd Font"
 style = "Light"
 
 [[font.normal]]
+family = "DankMono Nerd Font"
+
+[[font.normal]]
 family = "MonoLisa Nerd Font Mono"
 
 [font.features]
