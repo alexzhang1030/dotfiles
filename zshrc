@@ -73,8 +73,8 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export PATH="/Users/alex/.moon/bin:$PATH"
 
 # set ranger default editor
-export VISUAL=nvim
-export EDITOR=nvim
+export VISUAL=neovide
+export EDITOR=neovide
 
 # === effso start ===
 eval "$(effso env)"
@@ -148,7 +148,6 @@ alias jo="joshuto"
 alias ??="gh copilot suggest"
 alias flush_dns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 
-unalias nv
 nv() {
   neovide "$@" > /dev/null 2>&1
 }
