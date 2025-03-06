@@ -10,6 +10,9 @@ if vim.g.neovide then
   vim.opt.linespace = 12
 end
 
+-- This is for avante.nvim
+vim.opt.laststatus = 3
+
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins

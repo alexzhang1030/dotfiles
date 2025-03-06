@@ -11,6 +11,10 @@ local keymap = vim.keymap
 -- General Keymaps
 ---------------------
 
+-- ignore the macros realted keymaps
+keymap.set("n", "q", "<Nop>")
+keymap.set("n", "Q", "<Nop>")
+
 -- clear search highlights
 keymap.set("n", "<leader>nh", ":nohl<CR>")
 
@@ -22,14 +26,14 @@ keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- incremen
 keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" }) -- decrement
 
 -- quick move
-keymap.set("n", "J", "5j")
-keymap.set("v", "J", "5j")
-keymap.set("n", "K", "5k")
-keymap.set("v", "K", "5k")
-keymap.set("n", "H", "^")
-keymap.set("v", "H", "^")
-keymap.set("n", "L", "$")
-keymap.set("v", "L", "$")
+-- keymap.set("n", "J", "5j")
+-- keymap.set("v", "J", "5j")
+-- keymap.set("n", "K", "5k")
+-- keymap.set("v", "K", "5k")
+-- keymap.set("n", "H", "^")
+-- keymap.set("v", "H", "^")
+-- keymap.set("n", "L", "$")
+-- keymap.set("v", "L", "$")
 
 -- window management
 keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
