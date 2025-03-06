@@ -4,10 +4,10 @@
 	signingkey = 8CAB8829CD6C87BC
 [core]
 	autocrlf = input
-  pager = delta
+	pager = delta
   ignoreCase = false
 [interactive]
-  diffFilter = delta --color-only --features=interactive
+	diffFilter = delta --color-only
 [diff]
   tool = difftastic
 [difftool]
@@ -19,6 +19,7 @@
 [delta]
   features = decorations
   line-numbers = true
+	navigate = true
 [delta "interactive"]
   keep-plus-minus-markers = false
 [delta "decorations"]
@@ -39,4 +40,6 @@
 [init]
 	defaultBranch = main
 [commit]
-	gpgsign = true
+	gpgsign = true 
+[merge]
+	conflictStyle = zdiff3

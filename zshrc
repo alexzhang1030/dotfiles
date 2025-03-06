@@ -12,8 +12,8 @@ function load_fns() {
   function_dir="$HOME/.zsh_functions"
   fpath=($function_dir $fpath)
   for function_file in $function_dir/*; do
-      function_name=$(basename $function_file)
-      autoload -Uz $function_name
+    function_name=$(basename $function_file)
+    autoload -Uz $function_name
   done
 }
 load_fns # call when initializing
@@ -24,12 +24,12 @@ function fport() {
 
 # yazi
 function ya() {
-	tmp="$(mktemp -t "yazi-cwd.XXXXX")"
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
+  tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
 }
 
 # ----------------------------
@@ -105,9 +105,9 @@ bindkey '^F' autosuggest-accept
 # --------- Plugins ----------
 # ----------------------------
 plugins=(
-	git
-	zsh-syntax-highlighting
-	zsh-autosuggestions
+  git
+  zsh-syntax-highlighting
+  zsh-autosuggestions
   vi-mode
   git-open
 )
