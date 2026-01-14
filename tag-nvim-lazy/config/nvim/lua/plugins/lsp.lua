@@ -39,4 +39,9 @@ return {
       vim.g.zig_fmt_autosave = 0 -- handled by lsp
     end,
   },
+  -- code breadcrumb
+  {
+    "SmiteshP/nvim-navic",
+    dependencies = { "neovim/nvim-lspconfig" },
+  },
 }

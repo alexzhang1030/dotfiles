@@ -1,9 +1,9 @@
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = ["f", "g"]
 run = "plugin fg"
 desc = "find file by content"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = ["f", "f"]
 run = "plugin fg --args='fzf'"
 desc = "find file by file name"

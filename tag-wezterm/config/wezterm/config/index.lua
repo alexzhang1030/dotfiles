@@ -5,7 +5,7 @@ local utils = require("utils")
 
 return utils.merge_tables({
 	color_scheme = "Catppuccin Mocha",
-	line_height = 1.45,
+	line_height = 1.25,
 	window_close_confirmation = "NeverPrompt",
 }, {
 	font,

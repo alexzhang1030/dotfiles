@@ -1,6 +1,6 @@
 [user]
 	name = Alex
-	email = alexzhang1030@foxmail.com
+	email = alexzhang1030@foxmail.com 
 	signingkey = 8CAB8829CD6C87BC
 [core]
 	autocrlf = input
@@ -40,6 +40,8 @@
 [init]
 	defaultBranch = main
 [commit]
-	gpgsign = true 
+	gpgsign = true
 [merge]
 	conflictStyle = zdiff3
+[tag]
+	gpgSign = true

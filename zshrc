@@ -1,5 +1,3 @@
-# CodeWhisperer pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh"
 # ----------------------------
 # --------- Startup ----------
 # ----------------------------
@@ -80,16 +78,11 @@ export EDITOR=neovide
 eval "$(effso env)"
 # === effso end ===
 
-# dasel
-export fpath=(~/zsh/site-functions $fpath)
-mkdir -p ~/zsh/site-functions
-dasel completion zsh > ~/zsh/site-functions/_dasel
-compinit
-
 # fzf
 export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git --color=always'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS="--ansi"
+
 # ----------------------------
 # ---------- Config ----------
 # ----------------------------
@@ -100,6 +93,7 @@ setopt no_nomatch
 
 # shortcuts
 bindkey '^F' autosuggest-accept
+bindkey -M viins '^F' autosuggest-accept
 
 # ----------------------------
 # --------- Plugins ----------
@@ -132,34 +126,42 @@ alias ll="lsd -l"
 alias du="dust"
 alias as-tree="tree --fromfile"
 # alias tree="exa -T"
-alias cat="bat"
+# alias cat="bat"
 alias tail="tailspin" # or you can use tspin
 # multrun WeChat
 alias wechat="nohup /Applications/WeChat.app/Contents/MacOS/WeChat > /dev/null 2>&1 &"
-# clear dns cache
-alias clear_dns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 # clear current branch
 alias gcl='git_clean_current_branch'
-alias rustl='rustlings'
-alias tmux-session='~/Desktop/shell-scripts/tmux-session'
 alias brewclean="brew cleanup -s --prune=all"
 alias brewup="brew update && brew outdated | rg '^[^ ]+' | fzf -m | tr '\n' ' ' | xargs brew upgrade && brew cleanup"
 alias jo="joshuto"
 alias ??="gh copilot suggest"
 alias flush_dns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
+alias c="cursor ."
+alias d="nr dev"
+alias b="nr build"
 
 nv() {
   neovide "$@" > /dev/null 2>&1
 }
 
-# ----------------------------
-# -------- Completion --------
-# ----------------------------
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/homebrew/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
+        . "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/homebrew/Caskroom/miniconda/base/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 
-#  Fig post block. Keep at the bottom of this file.
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
 
-
-[[ -f "$HOME/fig-export/dotfiles/dotfile.zsh" ]] && builtin source "$HOME/fig-export/dotfiles/dotfile.zsh"
-
-# CodeWhisperer post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh"
+# Added by Antigravity
+export PATH="/Users/alex/.antigravity/antigravity/bin:$PATH"
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
