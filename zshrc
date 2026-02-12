@@ -165,3 +165,5 @@ unset __conda_setup
 export PATH="/Users/alex/.antigravity/antigravity/bin:$PATH"
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+
+[[ -f "$HOME/.config/kaku/zsh/kaku.zsh" ]] && source "$HOME/.config/kaku/zsh/kaku.zsh" # Kaku Shell Integration
