@@ -52,3 +52,5 @@
 	conflictStyle = zdiff3
 [tag]
 	gpgSign = true
+[fetch]
+	prune = true

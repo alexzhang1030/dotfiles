@@ -52,9 +52,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
-# for fnm
-eval "$(fnm env --use-on-cd)"
-
 # Wasmer
 export WASMER_DIR="/Users/alex/.wasmer"
 [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
@@ -73,10 +70,6 @@ export PATH="/Users/alex/.moon/bin:$PATH"
 # set ranger default editor
 export VISUAL=neovide
 export EDITOR=neovide
-
-# === effso start ===
-eval "$(effso env)"
-# === effso end ===
 
 # fzf
 export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git --color=always'
@@ -138,8 +131,7 @@ alias jo="joshuto"
 alias ??="gh copilot suggest"
 alias flush_dns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 alias c="cursor ."
-alias d="nr dev"
-alias b="nr build"
+alias vr="vp run"
 
 nv() {
   neovide "$@" > /dev/null 2>&1
@@ -167,3 +159,9 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
 [[ -f "$HOME/.config/kaku/zsh/kaku.zsh" ]] && source "$HOME/.config/kaku/zsh/kaku.zsh" # Kaku Shell Integration
+
+# OpenFang
+export PATH=/Users/alex/.openfang/bin:$PATH
+
+# Vite+ bin (https://viteplus.dev)
+. "$HOME/.vite-plus/env"
