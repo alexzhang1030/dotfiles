@@ -76,11 +76,6 @@ export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git --co
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS="--ansi"
 
-# ----------------------------
-# ---------- Config ----------
-# ----------------------------
-ZSH_THEME="spaceship"
-
 # fix zsh * flag
 setopt no_nomatch
 
@@ -120,7 +115,7 @@ alias du="dust"
 alias as-tree="tree --fromfile"
 # alias tree="exa -T"
 # alias cat="bat"
-alias tail="tailspin" # or you can use tspin
+# alias tail="tailspin" # or you can use tspin
 # multrun WeChat
 alias wechat="nohup /Applications/WeChat.app/Contents/MacOS/WeChat > /dev/null 2>&1 &"
 # clear current branch
@@ -165,3 +160,6 @@ export PATH=/Users/alex/.openfang/bin:$PATH
 
 # Vite+ bin (https://viteplus.dev)
 . "$HOME/.vite-plus/env"
+
+# starship
+eval "$(starship init zsh)"
